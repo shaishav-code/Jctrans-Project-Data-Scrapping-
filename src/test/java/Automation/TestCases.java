@@ -9,13 +9,13 @@ public class TestCases extends BaseClass{
 	public void VerifyLogin() throws InterruptedException
 	{
 		
-		lp.ClickOnSignIn();
-		lp.EnterUsername("nnn123");
-		lp.EnterPassword("$$A*2024*na$$");
-		lp.CheckedRememberMe();
-		lp.SignIn();
-		lp.ClickCompanyTab();
-		lp.getalldata();
+		lp2.ClickOnSignIn();
+		lp2.EnterUsername("nnn123");
+		lp2.EnterPassword("$$A*2024*na$$");
+		lp2.CheckedRememberMe();
+		lp2.SignIn();
+		lp2.ClickCompanyTab();
+		lp2.getalldata();
 	//	lp.SelectCompany();
 //		lp.Windowhandling(1);
 		//lp.scrolling();

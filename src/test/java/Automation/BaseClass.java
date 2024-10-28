@@ -16,7 +16,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass 
 {
 	   public WebDriver driver;
-	   public  PageClass lp;
+	   public PageClass lp;
+	   public PageClass2 lp2;
 	  // public WebDriverWait wait;
 		
 		@BeforeSuite
@@ -24,14 +25,14 @@ public class BaseClass
 			//WebDriverManager.chromedriver().setup();
 			WebDriverManager.firefoxdriver().setup();
 			
-//			ChromeOptions options = new ChromeOptions();
-			FirefoxOptions options = new FirefoxOptions();
+			//ChromeOptions options = new ChromeOptions();
+		FirefoxOptions options = new FirefoxOptions();
 			//options.addArguments("--headless");
 			//options.addArguments("--disable-gpu");
 			//driver=new ChromeDriver(options);
 			driver = new FirefoxDriver(options); 
 			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 			driver.get("https://www.jctrans.com/en/inquiry");
 			
 		}
@@ -46,6 +47,7 @@ public class BaseClass
 		public void objectCreation()
 		{
 			 lp = new PageClass(driver);
+			 lp2 = new PageClass2(driver);
 		}
 		
 
