@@ -19,6 +19,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
@@ -91,10 +92,10 @@ public class PageClass2 {
 	@FindBy(xpath = "//*[@id='app']/div[1]/section/div/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]")
 	private WebElement cityandcountry;
 
-	@FindBy(xpath = "(//div[@class='pt-5px desc_value'])[1]")
+	@FindBy(xpath = "//*[@id='ContactCardShowFlag']/div/div[1]/div/div[2]/div[1]")
 	private WebElement contactname;
 
-	@FindBy(xpath = "(//div[@class='pt-5px desc_value'])[2]")
+	@FindBy(xpath = "//*[@id='ContactCardShowFlag']/div/div[1]/div/div[2]/div[3]/div[1]/div")
 	private WebElement contactemail;
 
 	@FindBy(xpath = "//*[@id='app']/div[1]/section/div/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[5]/div[2]/a/span")
@@ -103,7 +104,7 @@ public class PageClass2 {
 	@FindBy(xpath = "//div[contains(@class,\"pt-10px font-['Poppins-Regular', 'Poppins']\")]")
 	private WebElement designation;
 
-	@FindBy(xpath = "(//*[@class='content pl-5px'])[2]")
+	@FindBy(xpath = "//*[@id='ContactCardShowFlag']/div/div[1]/div/div[2]/div[3]/div[2]/div")
 	private WebElement mobileNumber;
 
 	public void waitForElement(WebElement ele) {
@@ -588,9 +589,12 @@ public class PageClass2 {
 
 	@FindBy(xpath = "//ul[@class='el-pager']//li[@class='number active']")
 	private WebElement currentPage;
+	
+	@FindBy(xpath = "//span[@class='agent-icon']")
+	private WebElement topofcompany;
 
 	public void gotothepage() throws InterruptedException {
-		String pageno = "50";
+		String pageno = "5";
 		// Scroll karna padega
 	 // javaScript
 		waitForElement(lastelement);
@@ -620,24 +624,107 @@ public class PageClass2 {
 			act.sendKeys(Keys.BACK_SPACE).build().perform();
 			//gotopage.clear();
 			gotopage.sendKeys(pageno);
-			Thread.sleep(2000);
-			act.sendKeys(Keys.ENTER).build().perform();
+			try {
+				act.sendKeys(Keys.ENTER).build().perform();
+				Thread.sleep(4000);
+				//System.out.println("THread Execute for top");
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", topofcompany);
+				
+			} catch (ElementClickInterceptedException e) {
+				e.printStackTrace();
+			}
 			
 			//gotopage.sendKeys(Keys.ENTER);
 
 		}
 
 	}
+	
+	@FindBy(xpath = "//div[@class='p-4']")
+	private WebElement scrollforfilter;
+	
+	@FindBy(xpath = "//div[@class='membership-list']/div[1]/div[3]/div[1]/div[3]/div/div/p[2]")
+	private WebElement expandfilteroptions;
+	
+	@FindBy(xpath = "//div[@class='membership-list']/div[1]/div[3]/div[1]/div[3]/div/div/div/div[1]/label[1]/span")
+	private WebElement jcElitecheckbox;
+	
+	@FindBy(xpath = "//div[@class='membership-list']/div[1]/div[3]/div[1]/div[3]/div/div/div/div[1]/label[2]/span")
+	private WebElement jcPremiumcheckbox;
+	
+	@FindBy(xpath = "//div[@class='membership-list']/div[1]/div[3]/div[1]/div[3]/div/div/div/div[1]/label[3]/span")
+	private WebElement jcProjectscheckbox;
+	
+	@FindBy(xpath = "//div[@class='membership-list']/div[1]/div[3]/div[1]/div[3]/div/div/div/div[1]/label[4]/span")
+	private WebElement jcDangerousGoodscheckbox;
+	
+	@FindBy(xpath = "//div[@class='membership-list']/div[1]/div[3]/div[1]/div[3]/div/div/div/div[2]/label[1]/span")
+	private WebElement jceCommercecheckbox;
+	
+	@FindBy(xpath = "//div[@class='membership-list']/div[1]/div[3]/div[1]/div[3]/div/div/div/div[2]/label[2]/span")
+	private WebElement jcRailwaycheckbox;
+	
+	@FindBy(xpath = "//div[@class='membership-list']/div[1]/div[3]/div[1]/div[3]/div/div/div/div[2]/label[3]/span")
+	private WebElement jcVendorcheckbox;
+	
+	@FindBy(xpath = "//div[@class='membership-list']/div[1]/div[3]/div[1]/div[3]/div/div/div/div[2]/label[4]/span")
+	private WebElement jcRisingcheckbox;
+	
+	public void applyfilters() throws InterruptedException
+	{
+		waitForElement(lastelement);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", scrollforfilter);
+		expandfilteroptions.click();
+		jcElitecheckbox.click();
+		
+		Thread.sleep(5000);
+		waitForElement(lastelement);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", scrollforfilter);
+		jcPremiumcheckbox.click();
+		
+		Thread.sleep(5000);
+		waitForElement(lastelement);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", scrollforfilter);
+		jcProjectscheckbox.click();
+		
+		Thread.sleep(5000);
+		waitForElement(lastelement);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", scrollforfilter);
+		jcDangerousGoodscheckbox.click();
+		
+		Thread.sleep(5000);
+		waitForElement(lastelement);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", scrollforfilter);
+		jceCommercecheckbox.click();
+		
+		Thread.sleep(5000);
+		waitForElement(lastelement);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", scrollforfilter);
+		jcRailwaycheckbox.click();
+		
+//		Thread.sleep(5000);
+//		waitForElement(lastelement);
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", scrollforfilter);
+//		jcVendorcheckbox.click();
+		
+		Thread.sleep(5000);
+		waitForElement(lastelement);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", scrollforfilter);
+		jcRisingcheckbox.click();
+		
+		Thread.sleep(7000);
+		
+	}
 
 	public void getalldata() throws InterruptedException {
 
-		int totalRecords = 20; //
+		int totalRecords = 2000; //
 		int recordsPerPage = 20;
 		//int totalPages = totalRecords / recordsPerPage;
 
 		gotothepage();
 		try {
-			for (int currentPage = 1; currentPage <= 100; currentPage++) {
+			for (int currentPage = 1; currentPage <= 1; currentPage++) {
 				for (WebElement companyname2 : companynames) {
 					companyname2.click();
 					String parentWindow = driver.getWindowHandle();

@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-28T13:35:21 IST" name="Default suite" finished-at="2024-10-28T13:54:21 IST" duration-ms="1140039">
+  <suite started-at="2024-10-30T10:42:07 IST" name="Default suite" finished-at="2024-10-30T11:21:47 IST" duration-ms="2380375">
     <groups>
     </groups>
-    <test started-at="2024-10-28T13:35:21 IST" name="Default test" finished-at="2024-10-28T13:54:21 IST" duration-ms="1140039">
+    <test started-at="2024-10-30T10:42:07 IST" name="Default test" finished-at="2024-10-30T11:21:47 IST" duration-ms="2380375">
       <class name="Automation.TestCases">
-        <test-method is-config="true" signature="initBrowser()[pri:0, instance:Automation.TestCases@158d2680]" started-at="2024-10-28T13:34:58 IST" name="initBrowser" finished-at="2024-10-28T13:35:21 IST" duration-ms="22757" status="PASS">
+        <test-method is-config="true" signature="initBrowser()[pri:0, instance:Automation.TestCases@77847718]" started-at="2024-10-30T10:41:49 IST" name="initBrowser" finished-at="2024-10-30T10:42:07 IST" duration-ms="17890" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initBrowser -->
-        <test-method is-config="true" signature="objectCreation()[pri:0, instance:Automation.TestCases@158d2680]" started-at="2024-10-28T13:35:21 IST" name="objectCreation" finished-at="2024-10-28T13:35:21 IST" duration-ms="195" status="PASS">
+        <test-method is-config="true" signature="objectCreation()[pri:0, instance:Automation.TestCases@77847718]" started-at="2024-10-30T10:42:07 IST" name="objectCreation" finished-at="2024-10-30T10:42:07 IST" duration-ms="142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- objectCreation -->
-        <test-method signature="VerifyLogin()[pri:1, instance:Automation.TestCases@158d2680]" started-at="2024-10-28T13:35:21 IST" name="VerifyLogin" finished-at="2024-10-28T13:54:21 IST" duration-ms="1139721" status="PASS">
+        <test-method signature="VerifyLogin()[pri:1, instance:Automation.TestCases@77847718]" started-at="2024-10-30T10:42:07 IST" name="VerifyLogin" finished-at="2024-10-30T11:21:47 IST" duration-ms="2380142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyLogin -->

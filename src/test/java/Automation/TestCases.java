@@ -15,6 +15,7 @@ public class TestCases extends BaseClass{
 		lp2.CheckedRememberMe();
 		lp2.SignIn();
 		lp2.ClickCompanyTab();
+		lp2.applyfilters();
 		lp2.getalldata();
 	//	lp.SelectCompany();
 //		lp.Windowhandling(1);

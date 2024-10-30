@@ -27,8 +27,8 @@ public class BaseClass
 			
 			//ChromeOptions options = new ChromeOptions();
 		FirefoxOptions options = new FirefoxOptions();
-			//options.addArguments("--headless");
-			//options.addArguments("--disable-gpu");
+			options.addArguments("--headless");
+			options.addArguments("--disable-gpu");
 			//driver=new ChromeDriver(options);
 			driver = new FirefoxDriver(options); 
 			driver.manage().window().maximize();
